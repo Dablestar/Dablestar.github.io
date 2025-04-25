@@ -1,61 +1,26 @@
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from "./Home"
+import AboutMe from "./AboutMe"
+import Hobbies from "./Hobbies"
+import Burugall from "./Burugall"
+import NavBar from "./NavBar"
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
  
 //Route
-function App() {
+const App = () => {
   return(
     <BrowserRouter>
-      <Routes>
-        <Route></Route>
-        <Route></Route>
-        <Route></Route>
-        <Route></Route>
-      </Routes>
+      <div className='App'>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home/>}></Route>
+          <Route path="/aboutMe" element={<AboutMe/>}></Route>
+          <Route path="/hobbies" element={<Hobbies/>}></Route>
+          <Route path="/burugall" element={<Burugall/>}></Route>
+        </Routes>
+      </div>
     </BrowserRouter>
-  )
-}
-
-// Main Contents Section 
-function MainContents(){
-  <div className="container">
-    
-  </div>
-}
-
-// Header Navigation Menu at the left side of the page
-function HeaderNavMenu(){
-  return(
-    <ul>
-    <li><button title="test" onClick={() => }></button></li>
-    <li><button title="test"></button></li>
-    <li><button title="test"></button></li>
-    <li><button title="test"></button></li>
-  </ul>  
-  )
-}
-
-function FooterSection(){
-
-}
-
-function HomeScreen(){
-  <div className="test">test-HomeScreen</div>
-}
-function AboutMe(){
-  <div className="test">test-AboutMe</div>
-}
-function Hobbies(){
-  <div className="test">test-Hobbies</div>
-}
-function RDaburu(){
-  <div className="test">test-r/Daburu</div>
-}
-function ChangeLanguage(){
-  alert('language change')
-}
-
-
-
-
+  );
+}  
 
 export default App
