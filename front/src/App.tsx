@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './components/Home'
@@ -9,21 +7,22 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import Hobbies from './components/Hobbies'
 import Threads from './components/Threads'
+import "./index.css"
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <NavBar />
-        <div className="contents pl-5">
+        <div className="contents w-full flex flex-row">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutMe />} />
             <Route path="/hobbies" element={<Hobbies />} />
             <Route path="/threads" element={<Threads />} />
           </Routes>
+          <Footer />
         </div>
-        <Footer />
       </BrowserRouter>
     </>
   )
