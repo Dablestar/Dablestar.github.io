@@ -14,13 +14,15 @@ function App() {
     <>
       <BrowserRouter>
         <NavBar />
-        <div className="contents w-full flex flex-row">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutMe />} />
-            <Route path="/hobbies" element={<Hobbies />} />
-            <Route path="/threads" element={<Threads />} />
-          </Routes>
+        <div className="page w-full flex flex-col">
+          <div className="contents !p-5 w-9/12 h-screen flex flex-col">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/aboutme" element={<AboutMe />} />
+              <Route path="/hobbies" element={<Hobbies />} />
+              <Route path="/threads" element={<Threads />} />
+            </Routes>
+          </div>
           <Footer />
         </div>
       </BrowserRouter>

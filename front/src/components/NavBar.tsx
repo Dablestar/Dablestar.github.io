@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom"
 import "../index.css"
+import krFlag from "../assets/kr.png"
+import enFlag from "../assets/en.png"
 
 function NavBar(){
     return(
@@ -15,10 +17,10 @@ function NavBar(){
                         <li className="h-15 flex items-center justify-center transition hover:bg-[#242424] text-black hover:text-white"><Link to={"/threads"}>r/daburu</Link></li>
                     </ul>
                 </nav>
-                <div className="languageSettings">
+                <div className="languageSettings flex h-15 items-center justify-center gap-2 text-black">
                     <span>
-                        <img className="w-6 h-3" src="/path/to/english-flag.png" alt="English" />
-                        <img className="w-6 h-3" src="/path/to/spanish-flag.png" alt="Spanish" />
+                        <span className="w-25 h-15 rounded hover:bg-[#ABABAB]"><img className="w-10 h-5" src={enFlag} alt="English" /></span>
+                        <span className="w-25 h-15 rounded hover:bg-[#ABABAB]"><img className="w-10 h-5"src={krFlag} alt="Korean" /></span>
                     </span>
                 </div>
         </div>
