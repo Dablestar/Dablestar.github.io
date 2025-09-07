@@ -1,7 +1,9 @@
 function Home(){
    return(
       <div>
-         <span className="welcomeText text-2xl"></span>
+         <span className="welcomeText text-4xl">Welcome!</span>
+         <p className="description text-lg">This is my portfolio a.k.a personal webpage. <br></br> Have a look!</p>
+         <p className="techStackDescription text-lg">Made with: React Typescript, Tailwind CSS, Express.js</p>
       </div>
    ) 
 }
