@@ -5,7 +5,7 @@ import enFlag from "../assets/en.png"
 
 function NavBar(){
     return(
-        <div className={"sidebar w-3/12 flex flex-col bg-[#d9d9d9] p-5 min-h-screen"}>
+        <div className={"sidebar w-3/12 flex flex-col bg-[#d9d9d9] p-5 min-h-screen fixed left-0 top-0"}>
                 <div className="logo flex cinzel-decorative-regular text-center text-xl !mt-5 content-center">
                     <span className={"title w-8/12 text-white weight-bold text-center"}><Link to="/">Logo</Link></span>
                 </div>
