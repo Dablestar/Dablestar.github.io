@@ -13,8 +13,8 @@ function App() {
     <>
       <BrowserRouter>
         <NavBar />
-        <div className="page w-10/12 h-auto flex flex-col">
-          <div className="contents !p-5 w-10/12 flex flex-col fixed right-0 top-0 overflow-scroll shrink-0 ">
+        <div className="page w-10/12 !ml-75 !mb-25 !p-5 flex flex-col min-h-screen">
+          <div className="contents w-10/12 overflow-y-scroll">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/aboutme" element={<AboutMe />} />
