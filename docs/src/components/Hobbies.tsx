@@ -6,6 +6,7 @@ import mbkImg from "../assets/hobbies/mbk.jpg"
 import kokoImg from "../assets/hobbies/koko.jpg"
 import yumeImg from "../assets/hobbies/yume.jpg"
 import wgcImg from "../assets/hobbies/wgc.jpg"
+import composingImg from "../assets/hobbies/composing.png"
 
 
 
@@ -25,13 +26,13 @@ function Hobbies(){
                         <div className="leftBtn">
                             <button className="btnContainer w-20 h-20 rounded-[50%] shadow text-center text-base/20">L</button>
                         </div>
-                        <div className="imgSlider w-400 h-200 flex flex-col overflow-hidden justify-center items-center">
+                        <div className="imgSlider w-400 h-200 flex flex-row overflow-hidden justify-center items-center">
                             <InstagramEmbed className="w-100 h-180" url="https://www.instagram.com/p/DGhUhuFsnBu/" />
-                            <img src={mbkImg} alt="mbkCenter" />
-                            <img src={akihabaraImg} alt="akihabara" />
-                            <img src={wgcImg} alt="wgc" />
-                            <img src={yumeImg} alt="yumeArcade" />
-                            <img src={kokoImg} alt="kokoArcade" />
+                            <img className="w-400 h-180"src={mbkImg} alt="mbkCenter" />
+                            <img className="w-100 h-180"src={akihabaraImg} alt="akihabara" />
+                            <img className="w-100 h-180" src={wgcImg} alt="wgc" />
+                            <img className="w-100 h-180"src={yumeImg} alt="yumeArcade" />
+                            <img className="w-100 h-180"src={kokoImg} alt="kokoArcade" />
                         </div>
                         <div className="rightBtn flex">
                             <button className="btnContainer w-20 h-20 rounded-[50%] shadow text-center text-base/20">R</button>
@@ -68,7 +69,7 @@ function Hobbies(){
                         Composing
                     </div>
                     <div className="imgageContainer !mt-5">
-
+                        <img className="w-240 h-120" src={composingImg} alt="" />
                     </div>
                     <div className="hobbyDetails text-center !mt-5">
                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro architecto numquam culpa mollitia qui, corrupti modi libero eaque repellat nesciunt eveniet nisi deserunt sed quia eos enim. Recusandae, voluptate quod!
