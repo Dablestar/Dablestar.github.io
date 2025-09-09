@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { InstagramEmbed } from "react-social-media-embed"
 
 import akihabaraImg from "../assets/hobbies/akihabara.jpg"
@@ -13,6 +13,13 @@ import composingImg from "../assets/hobbies/composing.png"
 
 function Hobbies(){
     const [currentIdx, setIdx] = useState(0)
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIdx((prevIdx) => prevIdx < 5 ? prevIdx + 1 : 0)
+            console.log(currentIdx)
+        }, 5000)
+        return () => clearInterval(interval)
+    })
     return(
         <div>
             <script async src="//www.instagram.com/embed.js"></script>
@@ -27,12 +34,24 @@ function Hobbies(){
                             <button className="btnContainer w-20 h-20 rounded-[50%] shadow text-center text-base/20">L</button>
                         </div>
                         <div className="imgSlider w-400 h-200 flex flex-row overflow-hidden justify-center items-center">
-                            <InstagramEmbed className="w-100 h-180" url="https://www.instagram.com/p/DGhUhuFsnBu/" />
-                            <img className="w-400 h-180"src={mbkImg} alt="mbkCenter" />
-                            <img className="w-100 h-180"src={akihabaraImg} alt="akihabara" />
-                            <img className="w-100 h-180" src={wgcImg} alt="wgc" />
-                            <img className="w-100 h-180"src={yumeImg} alt="yumeArcade" />
-                            <img className="w-100 h-180"src={kokoImg} alt="kokoArcade" />
+                            <div className="imgContainer w-400 h-200 flex-shrink-0">
+                                <InstagramEmbed className="w-100 h-180" url="https://www.instagram.com/p/DGhUhuFsnBu/" />
+                            </div>
+                            <div className="imgContainer w-400 h-200 flex-shrink-0">
+                                <img className="w-400 h-180"src={mbkImg} alt="mbkCenter" />
+                            </div>
+                            <div className="imgContainer w-400 h-200 flex-shrink-0">
+                                <img className="w-100 h-180"src={akihabaraImg} alt="akihabara" />
+                            </div>
+                            <div className="imgContainer w-400 h-200 flex-shrink-0">
+                                <img className="w-100 h-180" src={wgcImg} alt="wgc" />
+                            </div>
+                            <div className="imgContainer w-400 h-200 flex-shrink-0">
+                                <img className="w-100 h-180"src={yumeImg} alt="yumeArcade" />
+                            </div>
+                            <div className="imgContainer w-400 h-200 flex-shrink-0">
+                                <img className="w-100 h-180"src={kokoImg} alt="kokoArcade" />
+                            </div>
                         </div>
                         <div className="rightBtn flex">
                             <button className="btnContainer w-20 h-20 rounded-[50%] shadow text-center text-base/20">R</button>
