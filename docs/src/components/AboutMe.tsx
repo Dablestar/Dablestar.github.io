@@ -2,6 +2,13 @@ import utsLogo from '../assets/uts.png'
 import utsCollegeLogo from '../assets/utscollege.png'
 import yydhLogo from '../assets/yydh.webp'
 import uwaterlooLogo from '../assets/uwaterloo.webp'
+import androidLogo from '../assets/android.png'
+import reactLogo from '../assets/react.png'
+import blazorLogo from '../assets/blazor.png'
+import nodeLogo from '../assets/node.png'
+import javaLogo from '../assets/java.png'
+import figmaLogo from '../assets/figma.png'
+import unityLogo from '../assets/unity.svg'
 import profile from '../assets/profile.jpg'
 import "../index.css"
 
@@ -13,13 +20,13 @@ function AboutMe(){
                 <p className="title text-2xl"> Personal Information</p>
             </div>
             <div className="personalInfo flex flex-row gap-8 mt-4 items-center">
-                <ul className='list-disc !ml-20 text-xl font-thin'>
+                <ul className='list-disc !ml-20 text-2xl font-thin'>
                     <li className='!mt-5'>Name: Jungbyn Choi a.k.a Martin</li>
                     <li className='!mt-5'>Age: 22</li>
-                    <li className='!mt-5'>Nationality: Korean</li>
+                    <li className='!mt-5'>Intl. Geek Student Studying CS/IT</li>
                 </ul>
                 <div className="profilePic">
-                    <img className="w-48 h-64 !ml-20" src={profile} alt="Profile Picture"/>
+                    <img className="w-48 h-70 !ml-20" src={profile} alt="Profile Picture"/>
                 </div>
             </div> 
 
@@ -82,37 +89,87 @@ function AboutMe(){
             </div>
             <hr className='!mt-5'/>
             <div className="skillTech">
-                <p className="title text-xl font-bold !mt-5">Main Skills & Technologies</p>
-                <div className="skillGrid grid-cols-2 grid-rows-3 grid !mt-4">
+                <p className="title text-2xl font-regular !mt-5">Main Skills & Technologies</p>
+                <div className="skillGrid grid-cols-2 grid-rows-3 grid !mt-4 text-xl">
                     <div className="skill flex flex-col items-center justify-center !p-4">
-                        <img className="w-12 h-12 skillIcon" src="" alt="" />
-                        <p className='text-xl'>Technology Name</p>
-                        <p>Details</p>
+                        <img className="w-20 h-20 skillIcon" src={reactLogo} alt="reactLogo" />
+                        <p className='text-xl font-regular'>React</p>
+                        <p className='font-thin'>Front-end Components Implementation</p>
                     </div>
                     <div className="skill flex flex-col items-center justify-center !p-4">
-                        <img className="w-12 h-12 skillIcon" src="" alt="" />
-                        <p className='text-xl'>Technology Name</p>
-                        <p>Details</p>
+                        <img className="w-20 h-20 skillIcon" src={nodeLogo} alt="nodeLogo" />
+                        <p className='text-xl font-regular'>Node.js</p>
+                        <p className='font-thin'>Back-end Server Implementation</p>
                     </div>
                     <div className="skill flex flex-col items-center justify-center !p-4">
-                        <img className="w-12 h-12 skillIcon" src="" alt="" />
-                        <p className='text-xl'>Technology Name</p>
-                        <p>Details</p>
+                        <img className="w-20 h-20 skillIcon" src={unityLogo} alt="unityLogo" />
+                        <p className='text-xl font-regular'>Unity</p>
+                        <p className='font-thin'>2D/3D Game Development</p>
                     </div>
                     <div className="skill flex flex-col items-center justify-center !p-4">
-                        <img className="w-12 h-12 skillIcon" src="" alt="" />
-                        <p className='text-xl'>Technology Name</p>
-                        <p>Details</p>
+                        <img className="w-20 h-20 skillIcon" src={javaLogo} alt="javaLogo" />
+                        <p className='text-xl font-regular'>Java</p>
+                        <p className='font-thin'>Object Oriented Implementation Approach</p>
                     </div>
                     <div className="skill flex flex-col items-center justify-center !p-4">
-                        <img className="w-12 h-12 skillIcon" src="" alt="" />
-                        <p className='text-xl'>Technology Name</p>
-                        <p>Details</p>
+                        <img className="w-15 h-20 skillIcon" src={figmaLogo} alt="figmaLogo" />
+                        <p className='text-xl font-regular'>Figma</p>
+                        <p className='font-thin'>Collaborative User Interface Planning and Prototype</p>
                     </div>
                     <div className="skill flex flex-col items-center justify-center !p-4">
-                        <img className="w-12 h-12 skillIcon" src="" alt="" />
-                        <p className='text-xl'>Technology Name</p>
-                        <p>Details</p>
+                        <img className="w-20 h-20 skillIcon" src={androidLogo} alt="androidLogo" />
+                        <p className='text-xl font-regular'>Android</p>
+                        <p className='font-thin'>Mobile Application Development w/Kotlin</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr className='!mt-5' />
+            
+            <div className="carrerWork">
+                <p className='title text-2xl font-regular !mt-5'>Carrer and Working Experience</p>
+                <div className="workExpList grid grid-cols-1 grid-row-3 !p-5">
+                    <div className="workExp flex items-center">
+                        <img className="workImg" src="" alt="" />
+                        <div className="workContents w-80">
+                            <div className="title text-xl font-regular">
+                                PuzzleAI
+                            </div>
+                            <div className="workDescription font-thin">
+                                Temporary
+                            </div>
+                        </div>
+                        <div className="workPeriod font-thin">
+                                May 2025 - Jun 2025
+                        </div>
+                    </div>
+                    <div className="workExp flex items-center !mt-5">
+                        <img className="workImg" src="" alt="" />
+                        <div className="workContents w-80">
+                            <div className="title text-xl font-regular">
+                                Republic of Korea Army
+                            </div>
+                            <div className="workDescription font-thin">
+                                Mandatory Military Service
+                            </div>
+                        </div>
+                        <div className="workPeriod font-thin">
+                                Oct 2021 - Apr 2023
+                        </div>
+                    </div>
+                    <div className="workExp flex items-center !mt-5">
+                        <img className="workImg" src="" alt="" />
+                        <div className="workContents w-80">
+                            <div className="title text-xl font-regular">
+                                YoungOne Trading - EPM Network
+                            </div>
+                            <div className="workDescription font-thin">
+                                Temporary Contract Office Clerk
+                            </div>
+                        </div>
+                        <div className="workPeriod font-thin">
+                                Jun 2021 - Aug 2021
+                        </div>
                     </div>
                 </div>
             </div>
