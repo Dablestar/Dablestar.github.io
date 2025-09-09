@@ -2,13 +2,18 @@ import utsLogo from '../assets/uts.png'
 import utsCollegeLogo from '../assets/utscollege.png'
 import yydhLogo from '../assets/yydh.webp'
 import uwaterlooLogo from '../assets/uwaterloo.webp'
+
 import androidLogo from '../assets/android.png'
 import reactLogo from '../assets/react.png'
-import blazorLogo from '../assets/blazor.png'
 import nodeLogo from '../assets/node.png'
 import javaLogo from '../assets/java.png'
 import figmaLogo from '../assets/figma.png'
 import unityLogo from '../assets/unity.svg'
+
+import youngoneLogo from '../assets/youngone.svg'
+import puzzleLogo from '../assets/puzzleai_logo.jpeg'
+import militaryLogo from '../assets/mf.png'
+
 import profile from '../assets/profile.jpg'
 import "../index.css"
 
@@ -128,15 +133,17 @@ function AboutMe(){
             
             <div className="carrerWork">
                 <p className='title text-2xl font-regular !mt-5'>Carrer and Working Experience</p>
-                <div className="workExpList grid grid-cols-1 grid-row-3 !p-5">
+                <div className="workExpList grid grid-cols-1 grid-row-3 !p-5 text-xl">
                     <div className="workExp flex items-center">
-                        <img className="workImg" src="" alt="" />
-                        <div className="workContents w-80">
-                            <div className="title text-xl font-regular">
+                        <div className="imgContainer w-80 h-40 flex justify-center">
+                            <img className="workImg w-40 h-40" src={puzzleLogo} alt="puzzleai" />
+                        </div>
+                        <div className="workContents w-80 !ml-5">
+                            <div className="title font-regular">
                                 PuzzleAI
                             </div>
                             <div className="workDescription font-thin">
-                                Temporary
+                                Temporary Application Tester
                             </div>
                         </div>
                         <div className="workPeriod font-thin">
@@ -144,8 +151,10 @@ function AboutMe(){
                         </div>
                     </div>
                     <div className="workExp flex items-center !mt-5">
-                        <img className="workImg" src="" alt="" />
-                        <div className="workContents w-80">
+                        <div className="imgContainer w-80 h-40 flex justify-center">
+                            <img className="workImg w-32 h-40" src={militaryLogo} alt="koodgun" />
+                        </div>
+                        <div className="workContents w-80 !ml-5">
                             <div className="title text-xl font-regular">
                                 Republic of Korea Army
                             </div>
@@ -158,8 +167,10 @@ function AboutMe(){
                         </div>
                     </div>
                     <div className="workExp flex items-center !mt-5">
-                        <img className="workImg" src="" alt="" />
-                        <div className="workContents w-80">
+                        <div className="imgContainer w-80 h-40 flex items-center">
+                            <img className="workImg" src={youngoneLogo} alt=""/>    
+                        </div>
+                        <div className="workContents w-80 !ml-5">
                             <div className="title text-xl font-regular">
                                 YoungOne Trading - EPM Network
                             </div>
