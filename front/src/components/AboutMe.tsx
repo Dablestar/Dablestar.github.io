@@ -31,7 +31,7 @@ function AboutMe(){
                     <li className='!mt-5'>Intl. Geek Student Studying CS/IT</li>
                 </ul>
                 <div className="profilePic">
-                    <img className="w-48 h-70 !ml-20" src={profile} alt="Profile Picture"/>
+                    <img className="w-54 h-70 !ml-20 border" src={profile} alt="Profile Picture"/>
                 </div>
             </div> 
 
