@@ -2,28 +2,170 @@ import { Link } from "react-router-dom"
 import "../index.css"
 import krFlag from "../assets/navBar/kr.png"
 import enFlag from "../assets/navBar/en.png"
+import homeIcon from "../assets/navBar/home.svg"
+import aboutmeIcon from "../assets/navBar/aboutme.svg"
+import hobbiesIcon from "../assets/navBar/hobbies.svg"
+import threadsIcon from "../assets/navBar/threads.svg"
+
 import { useState } from "react"
 
-
+type Language = "en" | "kr";
+function changeLang(language: Language) {
+    if(language === "en") {
+        alert("work in progress");
+    } else if (language === "kr") {
+        alert("준비중입니다..");
+    }
+}
 
 function NavBar({setNavHover}: {setNavHover: (isHover: boolean) => void}){
-    return( 
-        <div className={"sidebar w-1/12 flex flex-col bg-[#d9d9d9] p-5 min-h-screen fixed transition-all duration-300 ease-in-out hover:w-2/12"} onMouseEnter={() => setNavHover(true)} onMouseLeave={() => setNavHover(false)}>
-                <div className="logo flex cinzel-decorative-regular text-center text-xl font-thin !mt-5 content-center">
+    const [isHover, setIsHover] = useState(false);
+    return(
+        <div className={"sidebar w-1/12 flex flex-col bg-[#d9d9d9] p-5 min-h-screen fixed transition-all duration-300 ease-in-out hover:w-2/12"} onMouseEnter={() => {setNavHover(true); setIsHover(true);}} onMouseLeave={() => {setNavHover(false); setIsHover(false);}}>
+                <div className="logo flex cinzel-decorative-regular text-center text-xl font-thin !mt-5 justify-center items-center">
                     <span className={"title w-8/12 text-white weight-bold text-center"}><Link to="/">Logo</Link></span>
                 </div>
                 <nav className="flex flex-grow flex-col">
                     <ul className="!mt-15 text-white font-thin text-center">
-                        <li className="h-15 flex items-center justify-center transition hover:bg-[#242424] text-black hover:text-white"><Link to={"/"}>Home</Link></li>
-                        <li className="h-15 flex items-center justify-center transition hover:bg-[#242424] text-black hover:text-white"><Link to={"/aboutme"}>About Me</Link></li>
-                        <li className="h-15 flex items-center justify-center transition hover:bg-[#242424] text-black hover:text-white"><Link to={"/hobbies"}>Hobbies</Link></li>
-                        <li className="h-15 flex items-center justify-center transition hover:bg-[#242424] text-black hover:text-white"><Link to={"/threads"}>r/daburu</Link></li>
+                            {
+                                isHover && (
+                                    <>
+                                        <li className="group h-15 transition hover:bg-[#242424] text-black hover:text-white">
+                                            <Link to={"/"} className="h-full grid grid-cols-6 place-items-center">
+                                            <div className="icon w-8/12 h-8/12 col-span-2">
+                                                <svg className="w-full h-full"width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2796 3.71579C12.097 3.66261 11.903 3.66261 11.7203 3.71579C11.6678 3.7311 11.5754 3.7694 11.3789 3.91817C11.1723 4.07463 10.9193 4.29855 10.5251 4.64896L5.28544 9.3064C4.64309 9.87739 4.46099 10.0496 4.33439 10.24C4.21261 10.4232 4.12189 10.6252 4.06588 10.8379C4.00765 11.0591 3.99995 11.3095 3.99995 12.169V17.17C3.99995 18.041 4.00076 18.6331 4.03874 19.0905C4.07573 19.536 4.14275 19.7634 4.22513 19.9219C4.41488 20.2872 4.71272 20.5851 5.07801 20.7748C5.23658 20.8572 5.46397 20.9242 5.90941 20.9612C6.36681 20.9992 6.95893 21 7.82995 21H7.99995V18C7.99995 15.7909 9.79081 14 12 14C14.2091 14 16 15.7909 16 18V21H16.17C17.041 21 17.6331 20.9992 18.0905 20.9612C18.5359 20.9242 18.7633 20.8572 18.9219 20.7748C19.2872 20.5851 19.585 20.2872 19.7748 19.9219C19.8572 19.7634 19.9242 19.536 19.9612 19.0905C19.9991 18.6331 20 18.041 20 17.17V12.169C20 11.3095 19.9923 11.0591 19.934 10.8379C19.878 10.6252 19.7873 10.4232 19.6655 10.24C19.5389 10.0496 19.3568 9.87739 18.7145 9.3064L13.4748 4.64896C13.0806 4.29855 12.8276 4.07463 12.621 3.91817C12.4245 3.7694 12.3321 3.7311 12.2796 3.71579ZM11.1611 1.79556C11.709 1.63602 12.2909 1.63602 12.8388 1.79556C13.2189 1.90627 13.5341 2.10095 13.8282 2.32363C14.1052 2.53335 14.4172 2.81064 14.7764 3.12995L20.0432 7.81159C20.0716 7.83679 20.0995 7.86165 20.1272 7.88619C20.6489 8.34941 21.0429 8.69935 21.3311 9.13277C21.5746 9.49916 21.7561 9.90321 21.8681 10.3287C22.0006 10.832 22.0004 11.359 22 12.0566C22 12.0936 22 12.131 22 12.169V17.212C22 18.0305 22 18.7061 21.9543 19.2561C21.9069 19.8274 21.805 20.3523 21.5496 20.8439C21.1701 21.5745 20.5744 22.1701 19.8439 22.5496C19.3522 22.805 18.8274 22.9069 18.256 22.9543C17.706 23 17.0305 23 16.2119 23H15.805C15.7972 23 15.7894 23 15.7814 23C15.6603 23 15.5157 23.0001 15.3883 22.9895C15.2406 22.9773 15.0292 22.9458 14.8085 22.8311C14.5345 22.6888 14.3111 22.4654 14.1688 22.1915C14.0542 21.9707 14.0227 21.7593 14.0104 21.6116C13.9998 21.4843 13.9999 21.3396 13.9999 21.2185L14 18C14 16.8954 13.1045 16 12 16C10.8954 16 9.99995 16.8954 9.99995 18L9.99996 21.2185C10 21.3396 10.0001 21.4843 9.98949 21.6116C9.97722 21.7593 9.94572 21.9707 9.83107 22.1915C9.68876 22.4654 9.46538 22.6888 9.19142 22.8311C8.9707 22.9458 8.75929 22.9773 8.6116 22.9895C8.48423 23.0001 8.33959 23 8.21847 23C8.21053 23 8.20268 23 8.19495 23H7.78798C6.96944 23 6.29389 23 5.74388 22.9543C5.17253 22.9069 4.64769 22.805 4.15605 22.5496C3.42548 22.1701 2.8298 21.5745 2.4503 20.8439C2.19492 20.3523 2.09305 19.8274 2.0456 19.2561C1.99993 18.7061 1.99994 18.0305 1.99995 17.212L1.99995 12.169C1.99995 12.131 1.99993 12.0936 1.99992 12.0566C1.99955 11.359 1.99928 10.832 2.1318 10.3287C2.24383 9.90321 2.42528 9.49916 2.66884 9.13277C2.95696 8.69935 3.35105 8.34941 3.87272 7.8862C3.90036 7.86165 3.92835 7.83679 3.95671 7.81159L9.22354 3.12996C9.58274 2.81064 9.89467 2.53335 10.1717 2.32363C10.4658 2.10095 10.781 1.90627 11.1611 1.79556Z" fill="currentColor"/>
+                                                </svg>
+                                            </div>
+                                                <span className="col-span-3 text-center">Home</span> 
+                                            </Link>
+                                        </li>
+                                        <li className="group h-15 transition hover:bg-[#242424] text-black hover:text-white">
+                                            <Link to={"/aboutme"} className="h-full grid grid-cols-6 place-items-center">
+                                            <div className="icon w-8/12 h-8/12 col-span-2">
+                                                <svg className="w-full h-full" width="800px" height="800px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+                                                    <title>profile_round [#1342]</title>
+                                                    <desc>Created with Sketch.</desc>
+                                                    <defs>
+                                                </defs>
+                                                    <g id="Page-1" stroke="none" stroke-width="0.5" fill="none" fill-rule="evenodd">
+                                                        <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -2159.000000)" fill="currentColor">
+                                                            <g id="icons" transform="translate(56.000000, 160.000000)">
+                                                                <path d="M100.562548,2016.99998 L87.4381713,2016.99998 C86.7317804,2016.99998 86.2101535,2016.30298 86.4765813,2015.66198 C87.7127655,2012.69798 90.6169306,2010.99998 93.9998492,2010.99998 C97.3837885,2010.99998 100.287954,2012.69798 101.524138,2015.66198 C101.790566,2016.30298 101.268939,2016.99998 100.562548,2016.99998 M89.9166645,2004.99998 C89.9166645,2002.79398 91.7489936,2000.99998 93.9998492,2000.99998 C96.2517256,2000.99998 98.0830339,2002.79398 98.0830339,2004.99998 C98.0830339,2007.20598 96.2517256,2008.99998 93.9998492,2008.99998 C91.7489936,2008.99998 89.9166645,2007.20598 89.9166645,2004.99998 M103.955674,2016.63598 C103.213556,2013.27698 100.892265,2010.79798 97.837022,2009.67298 C99.4560048,2008.39598 100.400241,2006.33098 100.053171,2004.06998 C99.6509769,2001.44698 97.4235996,1999.34798 94.7348224,1999.04198 C91.0232075,1998.61898 87.8750721,2001.44898 87.8750721,2004.99998 C87.8750721,2006.88998 88.7692896,2008.57398 90.1636971,2009.67298 C87.1074334,2010.79798 84.7871636,2013.27698 84.044024,2016.63598 C83.7745338,2017.85698 84.7789973,2018.99998 86.0539717,2018.99998 L101.945727,2018.99998 C103.221722,2018.99998 104.226185,2017.85698 103.955674,2016.63598" id="profile_round-[#1342]">
+                                                </path>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                                <span className="col-span-3 text-center">About Me</span>
+                                            </Link>
+                                        </li>
+                                        <li className="group h-15 transition hover:bg-[#242424] text-black hover:text-white">
+                                            <Link to={"/hobbies"} className="h-full grid grid-cols-6 place-items-center">
+                                                <div className="icon w-8/12 h-8/12 col-span-2">
+                                                    <svg className="w-full h-full" height="800px" width="800px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
+                                                    viewBox="0 0 512 512" xmlSpace="preserve">
+                                                    <g>
+                                                        <path fill="currentColor" className="st0" d="M511.27,331.566L511.27,331.566c0-0.009,0-0.018,0-0.026c-0.008-0.052,0-0.087-0.008-0.14h-0.009
+                                                            c-6.682-88.65-27.159-154.403-55.948-198.846c-14.412-22.221-30.968-39.115-49.041-50.507
+                                                            c-18.048-11.401-37.649-17.198-57.388-17.18c-14.551-0.009-26.985,2.629-37.527,6.611c-15.836,5.97-27.358,14.795-36.364,21.319
+                                                        c-4.495,3.28-8.373,5.961-11.549,7.592c-3.211,1.658-5.475,2.239-7.436,2.239c-1.328-0.009-2.725-0.251-4.521-0.92
+                                                        c-3.115-1.137-7.288-3.732-12.278-7.332c-7.531-5.354-16.885-12.764-29.223-18.846c-12.339-6.092-27.766-10.69-46.855-10.664
+                                                        c-19.739-0.018-39.34,5.787-57.388,17.18c-27.115,17.119-50.794,46.481-69.008,87.887C18.542,211.332,5.743,264.92,0.746,331.401
+                                                        H0.738c-0.009,0.052,0,0.096-0.009,0.14c0,0.008,0,0.017,0,0.026l0,0C0.243,336.981,0,342.247,0,347.358
+                                                        c-0.009,25.058,5.77,46.455,16.651,63.141c10.846,16.694,26.863,28.347,45.614,33.822c6.43,1.892,13.068,2.811,19.757,2.811
+                                                        c19.445-0.026,39.046-7.618,57.692-20.764c18.681-13.189,36.598-32.052,52.91-55.731c7.845-11.427,18.5-24.798,29.987-34.854
+                                                        c5.736-5.032,11.662-9.214,17.362-12.026c5.71-2.82,11.09-4.244,16.027-4.235c4.936-0.009,10.317,1.414,16.026,4.235
+                                                        c8.555,4.199,17.588,11.558,25.787,20.112c8.226,8.538,15.67,18.196,21.562,26.76c16.312,23.688,34.23,42.55,52.902,55.739
+                                                        c18.655,13.146,38.255,20.738,57.7,20.764c6.69,0,13.328-0.92,19.749-2.811c18.759-5.475,34.776-17.128,45.614-33.822
+                                                        C506.221,393.813,512,372.416,512,347.358C512,342.256,511.757,336.981,511.27,331.566z M476.737,398.36
+                                                        c-8.104,12.356-19.236,20.469-33.284,24.651c-4.33,1.275-8.807,1.9-13.475,1.908c-13.484,0.026-28.902-5.414-44.894-16.703
+                                                        c-15.974-11.254-32.312-28.225-47.418-50.177c-8.564-12.417-20.044-27.012-33.64-38.95c-6.812-5.97-14.169-11.297-22.16-15.245
+                                                        c-7.975-3.94-16.677-6.534-25.866-6.534c-9.189,0-17.892,2.594-25.866,6.534c-11.974,5.943-22.577,14.906-31.957,24.616
+                                                        c-9.353,9.726-17.432,20.268-23.843,29.579c-15.106,21.952-31.454,38.923-47.419,50.177
+                                                        c-15.991,11.288-31.418,16.729-44.894,16.703c-4.677-0.009-9.145-0.633-13.484-1.908c-14.04-4.182-25.172-12.295-33.284-24.651
+                                                        c-8.06-12.364-13.04-29.293-13.04-51.002c0-4.451,0.208-9.111,0.65-13.961v-0.052l0.009-0.113
+                                                        c6.429-86.17,26.446-148.582,52.451-188.59c12.989-20.026,27.41-34.447,42.256-43.801c14.872-9.353,30.126-13.744,45.544-13.761
+                                                        c11.896,0.009,21.424,2.091,29.675,5.189c12.356,4.65,21.883,11.756,31.158,18.507c4.652,3.367,9.233,6.655,14.378,9.336
+                                                        c5.111,2.655,11.028,4.729,17.666,4.729c4.399,0,8.556-0.928,12.286-2.325c6.56-2.482,12-6.213,17.422-10.065
+                                                        c8.113-5.831,16.208-12.14,26.091-16.981c9.883-4.833,21.449-8.364,37.076-8.39c15.418,0.017,30.672,4.408,45.545,13.761
+                                                        c22.264,14.005,43.6,39.532,60.511,78.03c16.92,38.464,29.354,89.735,34.195,154.36v0.052l0.009,0.113
+                                                        c0.434,4.842,0.652,9.502,0.652,13.961C489.778,369.067,484.806,386.004,476.737,398.36z"/>
+                                                    <polygon fill="currentColor" className="st0" points="161.232,178.126 122.29,178.126 122.29,213.631 86.785,213.631 86.785,252.573 122.29,252.573 
+                                                        122.29,288.079 161.232,288.079 161.232,252.573 196.737,252.573 196.737,213.631 161.232,213.631 	"/>
+                                                    <path fill="currentColor" className="st0" d="M368.659,167.002c-11.331,0-20.52,9.189-20.52,20.538c0,11.341,9.189,20.538,20.52,20.538
+                                                        c11.35,0,20.538-9.197,20.538-20.538C389.197,176.191,380.008,167.002,368.659,167.002z"/>
+                                                    <path fill="currentColor"className="st0" d="M368.659,266.247c-11.331,0-20.52,9.189-20.52,20.53c0,11.349,9.189,20.538,20.52,20.538
+                                                        c11.35,0,20.538-9.189,20.538-20.538C389.197,275.436,380.008,266.247,368.659,266.247z"/>
+                                                    <path fill="currentColor" className="st0" d="M418.282,216.633c-11.341,0-20.538,9.189-20.538,20.53c0,11.349,9.197,20.529,20.538,20.529
+                                                        c11.35,0,20.538-9.18,20.538-20.529C438.82,225.822,429.631,216.633,418.282,216.633z"/>
+                                                    <path fill="currentColor" className="st0" d="M319.054,216.633c-11.349,0-20.538,9.189-20.538,20.53c0,11.349,9.189,20.529,20.538,20.529
+                                                        c11.341,0,20.539-9.18,20.539-20.529C339.592,225.822,330.394,216.633,319.054,216.633z"/>
+                                                </g>
+                                                </svg>
+                                                
+                                                </div>
+                                                <span className="col-span-3 text-center">Hobbies</span>
+                                            </Link>
+                                        </li>
+                                        <li className="group h-15 transition hover:bg-[#242424] text-black hover:text-white">
+                                            <Link to={"/threads"} className="h-full grid grid-cols-6 place-items-center">
+                                                <div className="icon w-8/12 h-8/12 col-span-2">
+                                                    <svg className="w-full h-full" width="800px" height="800px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    
+                                                        <title>note-text</title>
+                                                        <desc>Created with Sketch Beta.</desc>
+                                                        <defs>
+
+                                                    </defs>
+                                                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                            <g id="Icon-Set" transform="translate(-308.000000, -99.000000)" fill="currentColor">
+                                                                <path d="M332,107 L316,107 C315.447,107 315,107.448 315,108 C315,108.553 315.447,109 316,109 L332,109 C332.553,109 333,108.553 333,108 C333,107.448 332.553,107 332,107 L332,107 Z M338,127 C338,128.099 336.914,129.012 335.817,129.012 L311.974,129.012 C310.877,129.012 309.987,128.122 309.987,127.023 L309.987,103.165 C309.987,102.066 310.902,101 312,101 L336,101 C337.098,101 338,101.902 338,103 L338,127 L338,127 Z M336,99 L312,99 C309.806,99 308,100.969 308,103.165 L308,127.023 C308,129.22 309.779,131 311.974,131 L335.817,131 C338.012,131 340,129.196 340,127 L340,103 C340,100.804 338.194,99 336,99 L336,99 Z M332,119 L316,119 C315.447,119 315,119.448 315,120 C315,120.553 315.447,121 316,121 L332,121 C332.553,121 333,120.553 333,120 C333,119.448 332.553,119 332,119 L332,119 Z M332,113 L316,113 C315.447,113 315,113.448 315,114 C315,114.553 315.447,115 316,115 L332,115 C332.553,115 333,114.553 333,114 C333,113.448 332.553,113 332,113 L332,113 Z" id="note-text">
+
+                                                    </path>
+                                                            </g>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                                <span className="col-span-3 text-center">r/daburu</span>
+                                            </Link>
+                                        </li>
+                                    </>
+                                )
+                            }
+                            {
+                                !isHover && (
+                                    <>
+                                        <li className="h-15 flex items-center justify-center transition hover:bg-[#242424] text-black hover:text-white">
+                                            <Link to={"/"} className="h-full">
+                                                <img src={homeIcon} className="icon w-10/12 h-10/12"></img>
+                                            </Link>
+                                        </li>
+                                        <li className="h-15 flex items-center justify-center transition hover:bg-[#242424] text-black hover:text-white">
+                                            <Link to={"/aboutme"} className="h-full">
+                                                <img src={aboutmeIcon} className="icon w-10/12 h-10/12"></img>
+                                            </Link>
+                                        </li>
+                                        <li className="h-15 flex items-center justify-center transition hover:bg-[#242424] text-black hover:text-white">
+                                            <Link to={"/hobbies"} className="h-full">
+                                                <img src={hobbiesIcon} className="icon w-10/12 h-10/12"></img>
+                                            </Link>
+                                        </li>
+                                        <li className="h-15 flex items-center justify-center transition hover:bg-[#242424] text-black hover:text-white">
+                                            <Link to={"/threads"} className="h-full">
+                                                <img src={threadsIcon} className="icon w-10/12 h-10/12"></img>
+                                            </Link>
+                                        </li>
+                                    </>
+                                )    
+                            }
                     </ul>
                 </nav>
-                <div className="languageSettings flex h-15 items-center justify-center gap-2 text-black">
-                    <span>
-                        <span className="w-25 h-15 rounded hover:bg-[#ABABAB]"><img className="w-10 h-5" src={enFlag} alt="English" /></span>
-                        <span className="w-25 h-15 rounded hover:bg-[#ABABAB]"><img className="w-10 h-5"src={krFlag} alt="Korean" /></span>
+                <div className="languageSettings r gap-4 text-black">
+                    <span className="flex flex-row h-15 ">
+                        <span className="w-25 h-15 rounded hover:bg-[#ABABAB] flex items-center justify-center" onClick={() => changeLang("en")}><img className="w-10 h-5" src={enFlag} alt="English" /></span>
+                        <span className="w-25 h-15 rounded hover:bg-[#ABABAB] flex items-center justify-center" onClick={() => changeLang("kr")}><img className="w-10 h-5" src={krFlag} alt="Korean" /></span>
                     </span>
                 </div>
         </div>
