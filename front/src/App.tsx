@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, ScrollRestoration} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './components/Home'
 import AboutMe from './components/AboutMe'
@@ -13,8 +13,8 @@ function App() {
     <>
       <BrowserRouter>
         <NavBar />
-        <div className="page w-10/12 !ml-80 !mb-25 !p-5 flex flex-col min-h-screen">
-          <div className="contents w-10/12 overflow-y-scroll">
+        <div className="page w-10/12 !ml-75 !mb-25 !p-5 flex flex-col min-h-screen ">
+          <div className="pageContents container flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/aboutme" element={<AboutMe />} />
@@ -25,7 +25,6 @@ function App() {
           <Footer />
         </div>
       </BrowserRouter>
-      <ScrollRestoration />
     </>
   )
 }
