@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, ScrollRestoration} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './components/Home'
 import AboutMe from './components/AboutMe'
