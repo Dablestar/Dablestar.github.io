@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom"
 import "../index.css"
-import krFlag from "../assets/kr.png"
-import enFlag from "../assets/en.png"
+import krFlag from "../assets/navBar/kr.png"
+import enFlag from "../assets/navBar/en.png"
+import { useState } from "react"
 
-function NavBar(){
-    return(
-        <div className={"sidebar w-2/12 flex flex-col bg-[#d9d9d9] p-5 min-h-screen fixed"}>
+
+
+function NavBar({setNavHover}: {setNavHover: (isHover: boolean) => void}){
+    return( 
+        <div className={"sidebar w-1/12 flex flex-col bg-[#d9d9d9] p-5 min-h-screen fixed transition-all duration-300 ease-in-out hover:w-2/12"} onMouseEnter={() => setNavHover(true)} onMouseLeave={() => setNavHover(false)}>
                 <div className="logo flex cinzel-decorative-regular text-center text-xl font-thin !mt-5 content-center">
                     <span className={"title w-8/12 text-white weight-bold text-center"}><Link to="/">Logo</Link></span>
                 </div>
