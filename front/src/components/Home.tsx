@@ -1,9 +1,28 @@
 function Home(){
    return(
-      <div>
-         <span className="welcomeText text-4xl font-bold">Welcome!</span>
-         <p className="description text-lg">This is my portfolio a.k.a personal webpage. <br></br> Have a look!</p>
-         <p className="techStackDescription text-lg">Made with: React Typescript, Tailwind CSS, Express.js</p>
+      <div className="w-[100vh]">
+         <div className="welcomeText">
+            <span className="welcomeText w-full text-4xl align-center font-regular">Welcome!</span>
+         </div>
+         <p className="description text-xl font-thin !mt-5">This is my portfolio a.k.a personal webpage. <br/> 
+            Press the buttons on the left bar to navigate</p>
+         <p className="techStackDescription text-xl font-thin">Made with: React Typescript, Tailwind CSS, Express.js</p>
+
+         
+         <hr className="!mt-5"/>
+         <h2 className="text-2xl font-regular">Update Log</h2> 
+         <div className="updateLog grid grid-cols-2 gap-4 place-items-center w-6/12">
+            <div className="versions">
+               <ul>
+                  <li className="versionNumber text-2xl font-regular">v1.0.0</li>
+               </ul>
+            </div>
+            <div className="updateContents">
+               <ul className="updateList text-2xl font-thin">
+                  <li>Initial Release</li>
+               </ul>
+            </div>
+         </div>
       </div>
    ) 
 }
