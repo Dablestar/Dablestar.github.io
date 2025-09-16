@@ -9,6 +9,7 @@ import Threads from './components/Threads'
 import "./index.css"
 
 import { useState } from 'react'
+import ScrollToTop from './components/ScrollToTop'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <ScrollToTop />
         <NavBar setNavHover={setNavHover}/>
         <div className={`page !mb-25 !p-5 flex flex-col min-h-screen ${isNavHover ? "!ml-75" : "!ml-40"} transition-all duration-300 ease-in-out`}>
           <div className="contents flex-grow overflow-y-scroll">
