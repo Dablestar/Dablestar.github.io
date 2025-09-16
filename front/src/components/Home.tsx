@@ -11,7 +11,7 @@ function Home(){
          
          <hr className="!mt-5"/>
          <h2 className="text-2xl font-regular">Update Log</h2> 
-         <div className="updateLog grid grid-cols-2 gap-4 place-items-center w-6/12">
+         <div className="updateLog grid grid-cols-3 gap-4 place-items-center w-full">
             <div className="versions">
                <ul>
                   <li className="versionNumber text-2xl font-regular">v1.0.0</li>
@@ -22,6 +22,12 @@ function Home(){
                <ul className="updateList text-2xl font-thin">
                   <li>Initial Release</li>
                   <li>Added Scroll Restoration</li>
+               </ul>
+            </div>
+            <div className="updateDates">
+               <ul className="updateDates text-2xl font-thin">
+                  <li>2025-09-15</li>
+                  <li>2025-09-16</li>
                </ul>
             </div>
          </div>
