@@ -3,6 +3,7 @@ import "../index.css"
 import krFlag from "../assets/navBar/kr.png"
 import enFlag from "../assets/navBar/en.png"
 import { useState } from "react"
+import myLogo from "../assets/navBar/myLogo.png"
 
 type Language = "en" | "kr";
 function changeLang(language: Language): Language {
@@ -20,7 +21,7 @@ function NavBar({setNavHover}: {setNavHover: (isHover: boolean) => void}){
     return(
         <div className={"sidebar w-1/12 flex flex-col bg-[#d9d9d9] p-5 min-h-screen fixed transition-all duration-300 ease-in-out hover:w-2/12"} onMouseEnter={() => {setNavHover(true); setIsHover(true);}} onMouseLeave={() => {setNavHover(false); setIsHover(false);}}>
                 <div className="logo flex cinzel-decorative-regular text-center text-xl font-thin !mt-5 justify-center items-center">
-                    <span className={"title w-8/12 text-white weight-bold text-center"}><Link to="/">Logo</Link></span>
+                    <span className={"title w-8/12 text-white weight-bold text-center"}><Link to="/"><img src={myLogo} alt="Logo" /></Link></span>
                 </div>
                 <nav className="flex flex-grow flex-col">
                     <ul className="!mt-15 text-white font-thin text-center">
