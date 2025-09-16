@@ -15,11 +15,13 @@ function Home(){
             <div className="versions">
                <ul>
                   <li className="versionNumber text-2xl font-regular">v1.0.0</li>
+                  <li className="versionNumber text-2xl font-regular">v1.0.1</li>
                </ul>
             </div>
             <div className="updateContents">
                <ul className="updateList text-2xl font-thin">
                   <li>Initial Release</li>
+                  <li>Added Scroll Restoration</li>
                </ul>
             </div>
          </div>
