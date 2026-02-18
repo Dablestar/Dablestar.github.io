@@ -14,7 +14,7 @@ import youngoneLogo from '../assets/youngone.svg'
 import puzzleLogo from '../assets/puzzleai_logo.jpeg'
 import militaryLogo from '../assets/mf.png'
 
-import profile from '../assets/profile.jpg'
+import profile from '../assets/profile_new.jpg'
 import "../index.css"
 
 function AboutMe(){
@@ -25,7 +25,7 @@ function AboutMe(){
                 <p className="title text-2xl"> Personal Information</p>
             </div>
             <div className="personalInfo flex flex-row gap-8 mt-4 items-center">
-                <ul className='list-disc !ml-20 text-2xl font-thin'>
+                <ul className='list-none !ml-20 text-2xl font-thin'>
                     <li className='!mt-5'>Name: Jungbyn Choi a.k.a Martin</li>
                     <li className='!mt-5'>Age: 22</li>
                     <li className='!mt-5'>Intl. Geek Student Studying CS/IT</li>
@@ -46,7 +46,7 @@ function AboutMe(){
                         <li>Bachelor of Information Technology</li>
                         <li>Feb 2024 - Present</li>
                     </ul>
-                    <ul className="schoolActivities list-disc !ml-8">
+                    <ul className="schoolActivities list-none !ml-8">
                         <li>Advanced software skills with many team projects</li>
                         <li>Started interface designs</li>
                         <li>C++ / Blazor / React / Node.js</li>
@@ -59,7 +59,7 @@ function AboutMe(){
                         <li>Global Exchange - Computer Science</li>
                         <li>Jun 2025 - Apr 2025</li>
                     </ul>
-                    <ul className="schoolActivities list-disc !ml-8">
+                    <ul className="schoolActivities list-none !ml-8">
                         <li>Collaborated with students from various backgrounds</li>
                         <li>Winter survival</li>
                         <li>Python / Kotlin</li>
@@ -72,7 +72,7 @@ function AboutMe(){
                         <li>Diploma of Information Technology</li>
                         <li>Jun 2023 - Dec 2023</li>
                     </ul>
-                    <ul className="schoolActivities list-disc !ml-8">
+                    <ul className="schoolActivities list-none !ml-8">
                         <li>Language skills and advanced software development</li>
                         <li>Started to adapted to Australian society</li>
                         <li>JavaFX / mySQL / </li>
@@ -85,7 +85,7 @@ function AboutMe(){
                         <li>Software Development Major</li>
                         <li>Mar 2018 - Feb 2021</li>
                     </ul>
-                    <ul className="schoolActivities list-disc !ml-8">
+                    <ul className="schoolActivities list-none !ml-8">
                         <li>Fundamentals of Programming and Web Development</li>
                         <li>Variety of Professional Certificates</li>
                         <li>HTML / CSS / Java / JSP / Unity / OracleDB</li>
