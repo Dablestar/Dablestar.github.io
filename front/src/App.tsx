@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { initializeApp } from 'firebase/app'
+import { getAnalytics } from "firebase/analytics";
 
 import Home from './components/Home'
 import AboutMe from './components/AboutMe'
@@ -14,6 +16,7 @@ import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const [isNavHover, setNavHover] = useState(false);
+
   return (
     <>
       <BrowserRouter>
