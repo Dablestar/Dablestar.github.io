@@ -37,7 +37,7 @@ function AboutMe(){
 
             <hr className='!mt-5'/>
 
-            <div className="educationInfo grid grid-row-4 grid-col-1 gap-4 !mt-5 text-xl">
+            <div className="educationInfo flex flex-col gap-4 !mt-5 text-xl">
                 <p className="title text-2xl">Education</p>
                 <div className="school flex flex-row items-center !ml-4 font-thin">
                     <img src={utsLogo} alt="" className="schoolLogo w-30 h-30"/>

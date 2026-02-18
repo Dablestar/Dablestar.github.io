@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './components/Home'
 import AboutMe from './components/AboutMe'
@@ -8,13 +8,19 @@ import Hobbies from './components/Hobbies'
 import Threads from './components/Threads'
 import "./index.css"
 
+import { useState } from 'react'
+import ScrollToTop from './components/ScrollToTop'
+
+
 function App() {
+  const [isNavHover, setNavHover] = useState(false);
   return (
     <>
       <BrowserRouter>
-        <NavBar />
-        <div className="page w-10/12 !ml-80 !mb-25 !p-5 flex flex-col min-h-screen">
-          <div className="contents w-10/12 overflow-y-scroll">
+      <ScrollToTop />
+        <NavBar setNavHover={setNavHover}/>
+        <div className={`page !mb-25 !p-5 flex flex-col min-h-screen ${isNavHover ? "!ml-75" : "!ml-40"} transition-all duration-300 ease-in-out`}>
+          <div className="contents flex-grow overflow-y-scroll">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/aboutme" element={<AboutMe />} />
@@ -22,7 +28,7 @@ function App() {
               <Route path="/threads" element={<Threads />} />
             </Routes>
           </div>
-          <Footer />
+          <Footer isNavHover={isNavHover} />
         </div>
       </BrowserRouter>
     </>

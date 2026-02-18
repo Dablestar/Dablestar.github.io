@@ -2,9 +2,10 @@ import github from "../assets/github.svg"
 import instagram from "../assets/instagram.svg"
 import linkedin from "../assets/linkedin.svg"
 
-function Footer(){
+function Footer({isNavHover}: {isNavHover: boolean}){
+    console.log("FooterIsNavHover: ", isNavHover)
     return (
-        <footer className="footer bg-[#242424] w-10/12 h-25 flex flex-row text-white justify-between fixed bottom-0 items-center p-5 right-0">
+        <footer className={`footer bg-[#242424] h-25 flex flex-row text-white justify-between fixed bottom-0 items-center p-5 right-0 ${isNavHover ? "w-10/12" : "w-11/12"} transition-all duration-300 ease-in-out`}>
             <p className="copyrightText text-2xl !ml-20">© Copyright by Daburu 2025 All rights reserved.</p>
             <div className="sns flex flex-row gap-4 !mr-20">
                     <a className="w-15 h-15 flex items-center justify-center rounded-[50%] bg-black border border-white" href="https://github.com/Dablestar">
