@@ -22,12 +22,14 @@ function Home(){
                <ul className="updateList text-2xl font-thin">
                   <li>Initial Release</li>
                   <li>Added Scroll Restoration</li>
+                  <li>Changed Profile Pic & Updated Design</li>
                </ul>
             </div>
             <div className="updateDates">
                <ul className="updateDates text-2xl font-thin">
                   <li>2025-09-15</li>
                   <li>2025-09-16</li>
+                  <li>2026-02-18</li>
                </ul>
             </div>
          </div>
