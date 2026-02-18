@@ -11,7 +11,7 @@ import figmaLogo from '../assets/figma.png'
 import unityLogo from '../assets/unity.svg'
 
 import youngoneLogo from '../assets/youngone.svg'
-import puzzleLogo from '../assets/puzzleai_logo.jpeg'
+import puzzleLogo from '../assets/puzzle_logo01.svg'
 import militaryLogo from '../assets/mf.png'
 
 import profile from '../assets/profile_new.jpg'
@@ -28,7 +28,7 @@ function AboutMe(){
                 <ul className='list-none !ml-20 text-2xl font-thin'>
                     <li className='!mt-5'>Name: Jungbyn Choi a.k.a Martin</li>
                     <li className='!mt-5'>Age: 22</li>
-                    <li className='!mt-5'>Intl. Geek Student Studying CS/IT</li>
+                    <li className='!mt-5'>International Student Studying CS/IT</li>
                 </ul>
                 <div className="profilePic">
                     <img className="w-54 h-70 !ml-20 border" src={profile} alt="Profile Picture"/>
@@ -49,7 +49,7 @@ function AboutMe(){
                     <ul className="schoolActivities list-none !ml-8">
                         <li>Advanced software skills with many team projects</li>
                         <li>Started interface designs</li>
-                        <li>C++ / Blazor / React / Node.js</li>
+                        <li>C++ / Blazor / React / Node.js / mongoDB / Azure</li>
                     </ul>
                 </div>
                 <div className="school flex flex-row items-center !ml-4 font-thin">
@@ -62,7 +62,7 @@ function AboutMe(){
                     <ul className="schoolActivities list-none !ml-8">
                         <li>Collaborated with students from various backgrounds</li>
                         <li>Winter survival</li>
-                        <li>Python / Kotlin</li>
+                        <li>Python / Kotlin / Android / Firebase</li>
                     </ul>
                 </div>
                 <div className="school flex flex-row items-center !ml-4 font-thin">
@@ -75,7 +75,7 @@ function AboutMe(){
                     <ul className="schoolActivities list-none !ml-8">
                         <li>Language skills and advanced software development</li>
                         <li>Started to adapted to Australian society</li>
-                        <li>JavaFX / mySQL / </li>
+                        <li>JavaFX / mySQL</li>
                     </ul>
                 </div>
                 <div className="school flex flex-row items-center !ml-4 font-thin">

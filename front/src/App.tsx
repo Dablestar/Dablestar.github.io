@@ -19,8 +19,8 @@ function App() {
       <BrowserRouter>
       <ScrollToTop />
         <NavBar setNavHover={setNavHover}/>
-        <div className={`page !mb-25 !p-5 flex flex-col min-h-screen ${isNavHover ? "!ml-75" : "!ml-40"} transition-all duration-300 ease-in-out`}>
-          <div className="contents flex-grow overflow-y-scroll">
+        <div className={`page !mb-25 !p-5 flex flex-col min-h-screen flex-1 ${isNavHover ? "!ml-75" : "!ml-40"} transition-all duration-300 ease-in-out`}>
+          <div className="flex-grow w-full">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/aboutme" element={<AboutMe />} />

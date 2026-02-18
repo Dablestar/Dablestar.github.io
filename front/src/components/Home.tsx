@@ -1,6 +1,6 @@
 function Home(){
    return(
-      <div className="w-[100vh]">
+      <div className="w-full">
          <div className="welcomeText">
             <span className="welcomeText w-full text-4xl align-center font-regular">Welcome!</span>
          </div>
