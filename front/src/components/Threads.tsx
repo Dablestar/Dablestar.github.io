@@ -1,4 +1,35 @@
+import { getCommentList, uploadComment, deleteComment, getIpAddress  } from "./FirebaseConfigure"
+import { useEffect, useState } from "react"
+import type { UserComment } from "./structure/UserComment"
+import type { InternalComment } from "./structure/InternalComment"
+
 function Threads(){
+    const [comments, setComments] = useState<UserComment[]>([]);
+    useEffect(() => {
+        getCommentList().then(setComments);
+    }, []);
+
+    const [name, setName] = useState("");
+    const [comment, setComment] = useState("");
+    const [password, setPassword] = useState("");
+    const handleSubmit = async () => {
+        // alert("Submitting comment:" + JSON.stringify({ name, comment, password }));
+        const ip = await getIpAddress();
+        console.log("Fetched IP address:", ip);
+        await uploadComment({
+            name: name,
+            date: new Date().toISOString().slice(0, 10),
+            comment: comment,
+            password: password,
+            ipAddress: ip
+        }as InternalComment);
+        console.log("Comment submitted:", { name, comment, password, ip });
+        setName("");
+        setComment("");
+        setPassword("");
+        getCommentList().then(setComments);
+    };
+
     return(
             <div className="w-full">
                 <span>
@@ -9,12 +40,13 @@ function Threads(){
                 <div className="commentForm w-9/10 mt-5 ml-10">
                     <form action="" className="mt-5 grid gap-2">
                         <div className="grid grid-cols-4 gap-2">
-                            <input type="text" placeholder="Name" className="w-full p-2 border-b text-2xl focus:outline-hidden col-span-1" />
-                            <input type="text" placeholder="Comment" className="w-full p-2 border-b text-2xl focus:outline-hidden col-span-3" />
+                            <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} className="w-full p-2 border-b text-2xl focus:outline-hidden col-span-1" />
+                            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full p-2 border-b text-2xl focus:outline-hidden col-span-3" />
+                            <input type="text" placeholder="Comment" value={comment} onChange={(e) => setComment(e.target.value)} className="w-full p-2 border-b text-2xl focus:outline-hidden col-span-4" />
                         </div>
                         <div className="flex justify-between items-center">
                             <span className="text-l font-bold col-span-3 text-right">※By pressing Submit, you are agreeing to provide your IP address to the site owner</span>
-                            <button className="p-2 text-xl border rounded col-span-1">Submit</button>
+                            <button className="p-2 text-xl border rounded col-span-1" type="button" onClick={() => {handleSubmit();}}>Submit</button>
                         </div>
                     </form>
                 </div>
@@ -29,11 +61,13 @@ function Threads(){
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="border-b p-2 mt-4 mb-4">
-                            <td className="p-2 text-center text-xl">Martin</td>
-                            <td className="p-2 text-center text-xl">2025-02-18</td>
-                            <td className="p-2 mt-4 mb-4 text-xl">Hello, this is a test comment!</td>
-                        </tr>
+                        {comments.map((comment, index) => (
+                            <tr key={index} className="hover:bg-gray-100">
+                                <td className="border-b p-2 text-xl">{comment.name}</td>
+                                <td className="border-b p-2 text-xl">{comment.date}</td>
+                                <td className="border-b p-2 text-xl">{comment.comment}</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
