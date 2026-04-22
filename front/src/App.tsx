@@ -14,6 +14,7 @@ import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const [isNavHover, setNavHover] = useState(false);
+
   return (
     <>
       <BrowserRouter>
