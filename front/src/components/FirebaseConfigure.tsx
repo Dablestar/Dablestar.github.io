@@ -1,7 +1,7 @@
- import { initializeApp } from "firebase/app";
- import type { UserComment } from "./structure/UserComment";
- import type { InternalComment } from "./structure/InternalComment";
- import { getFirestore, collection, getDocs, getDoc, doc, setDoc, deleteDoc, addDoc } from "firebase/firestore";
+import { initializeApp } from "firebase/app";
+import type { UserComment } from "./structure/UserComment";
+import type { InternalComment } from "./structure/InternalComment";
+import { getFirestore, collection, getDocs, deleteDoc, addDoc, query, where } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_API_KEY,
@@ -55,19 +55,17 @@ export async function uploadComment(comment: InternalComment) {
 }
 
 export async function deleteComment(comment: InternalComment) {
-    const docRef = doc(db, "threadList");
     console.log("Deleting comment:", comment);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-        const data = docSnap.data();
-        if (Array.isArray(data.comments)) {
-            const updatedComments = data.comments.filter((c: InternalComment) => c.name !== comment.name || c.date !== comment.date || c.comment !== comment.comment);
-            await setDoc(docRef, { comments: updatedComments });
-        } else {
-            console.log("No comments to delete!");
-        }
-    } else {
-        console.log("No such document!");
+    const q = query(
+        collection(db, "threadList"),
+        where("name", "==", comment.name),
+        where("date", "==", comment.date),
+        where("comment", "==", comment.comment)
+    );
+    const querySnapshot = await getDocs(q);
+    for (const docSnap of querySnapshot.docs) {
+        await deleteDoc(docSnap.ref);
+        console.log("Deleted comment with ID:", docSnap.id);
     }
 }
  
