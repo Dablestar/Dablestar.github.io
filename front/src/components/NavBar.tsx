@@ -19,14 +19,14 @@ function NavBar({setNavHover}: {setNavHover: (isHover: boolean) => void}){
     const [isHover, setIsHover] = useState(false);
     const [language, setLanguage] = useState<Language>("en");
     return(
-        <div className={"sidebar w-1/12 flex flex-col bg-[#242424] p-5 min-h-screen fixed transition-all duration-300 ease-in-out hover:w-2/12"} onMouseEnter={() => {setNavHover(true); setIsHover(true);}} onMouseLeave={() => {setNavHover(false); setIsHover(false);}}>
+        <div className={"sidebar w-1/12 flex flex-col bg-[#b8b8b8] p-5 min-h-screen fixed transition-all duration-300 ease-in-out hover:w-2/12"} onMouseEnter={() => {setNavHover(true); setIsHover(true);}} onMouseLeave={() => {setNavHover(false); setIsHover(false);}}>
                 <div className="logo flex cinzel-decorative-regular text-center text-xl font-thin !mt-5 justify-center items-center">
                     <span className={"title w-8/12 text-white weight-bold text-center"}><Link to="/"><img src={myLogo} alt="Logo" /></Link></span>
                 </div>
                 <nav className="flex flex-grow flex-col">
                     <ul className="!mt-15 font-thin">
 
-                        <li className="h-15 transition-colors duration-300 ease-in-out hover:bg-[#3a3a3a] text-gray-300 hover:text-white">
+                        <li className="h-15 transition-colors duration-300 ease-in-out hover:bg-[#242424] text-gray-800 hover:text-white">
                             <Link to={"/"} className="h-full flex items-center justify-center">
                             <div className="icon flex-shrink-0 w-7 h-7">
                                 <svg className="w-full h-full"width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +36,7 @@ function NavBar({setNavHover}: {setNavHover: (isHover: boolean) => void}){
                             <span className={`whitespace-nowrap overflow-hidden transition-all duration-300 ease-in-out ${isHover ? "opacity-100 max-w-40 ml-3" : "opacity-0 max-w-0"}`}>Home</span>
                             </Link>
                         </li>
-                        <li className="h-15 transition-colors duration-300 ease-in-out hover:bg-[#3a3a3a] text-gray-300 hover:text-white">
+                        <li className="h-15 transition-colors duration-300 ease-in-out hover:bg-[#242424] text-gray-800 hover:text-white">
                             <Link to={"/aboutme"} className="h-full flex items-center justify-center">
                             <div className="icon flex-shrink-0 w-7 h-7">
                                 <svg className="w-full h-full" width="800px" height="800px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -57,7 +57,7 @@ function NavBar({setNavHover}: {setNavHover: (isHover: boolean) => void}){
                             <span className={`whitespace-nowrap overflow-hidden transition-all duration-300 ease-in-out ${isHover ? "opacity-100 max-w-40 ml-3" : "opacity-0 max-w-0"}`}>About Me</span>
                             </Link>
                         </li>
-                        <li className="h-15 transition-colors duration-300 ease-in-out hover:bg-[#3a3a3a] text-gray-300 hover:text-white">
+                        <li className="h-15 transition-colors duration-300 ease-in-out hover:bg-[#242424] text-gray-800 hover:text-white">
                             <Link to={"/hobbies"} className="h-full flex items-center justify-center">
                                 <div className="icon flex-shrink-0 w-7 h-7">
                                     <svg className="w-full h-full" height="800px" width="800px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -104,7 +104,7 @@ function NavBar({setNavHover}: {setNavHover: (isHover: boolean) => void}){
                                 <span className={`whitespace-nowrap overflow-hidden transition-all duration-300 ease-in-out ${isHover ? "opacity-100 max-w-40 ml-3" : "opacity-0 max-w-0"}`}>Hobbies</span>
                             </Link>
                         </li>
-                        <li className="h-15 transition-colors duration-300 ease-in-out hover:bg-[#3a3a3a] text-gray-300 hover:text-white">
+                        <li className="h-15 transition-colors duration-300 ease-in-out hover:bg-[#242424] text-gray-800 hover:text-white">
                             <Link to={"/threads"} className="h-full flex items-center justify-center">
                                 <div className="icon flex-shrink-0 w-7 h-7">
                                     <svg className="w-full h-full" width="800px" height="800px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -127,10 +127,10 @@ function NavBar({setNavHover}: {setNavHover: (isHover: boolean) => void}){
                         </li>
                     </ul>
                 </nav>
-                <div className="languageSettings gap-4 text-gray-300">
+                <div className="languageSettings gap-4 text-gray-800">
                     <span className="flex flex-row justify-center items-center gap-4 h-15">
-                        <span className={`w-12 h-7 rounded ${language === "en" ? "bg-[#4a4a4a]" : ""} hover:bg-[#4a4a4a] transition flex items-center justify-center`} onClick={() => { changeLang("en"); setLanguage("en"); }}><img className="w-9 h-5" src={enFlag} alt="English" /></span>
-                        <span className={`w-12 h-7 rounded ${language === "kr" ? "bg-[#4a4a4a]" : ""} hover:bg-[#4a4a4a] transition flex items-center justify-center`} onClick={() => { changeLang("kr"); setLanguage("kr"); }}><img className="w-10 h-5" src={krFlag} alt="Korean" /></span>
+                        <span className={`w-12 h-7 rounded ${language === "en" ? "bg-[#9a9a9a]" : ""} hover:bg-[#9a9a9a] transition flex items-center justify-center`} onClick={() => { changeLang("en"); setLanguage("en"); }}><img className="w-9 h-5" src={enFlag} alt="English" /></span>
+                        <span className={`w-12 h-7 rounded ${language === "kr" ? "bg-[#9a9a9a]" : ""} hover:bg-[#9a9a9a] transition flex items-center justify-center`} onClick={() => { changeLang("kr"); setLanguage("kr"); }}><img className="w-10 h-5" src={krFlag} alt="Korean" /></span>
                     </span>
                 </div>
         </div>
