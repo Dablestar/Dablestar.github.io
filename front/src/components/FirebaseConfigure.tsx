@@ -42,15 +42,11 @@ export async function getCommentList(): Promise<UserComment[]> {
 export async function uploadComment(comment: InternalComment) {
     console.log("Uploading comment:", comment);
     const result = addDoc(collection(db, "threadList"), comment).then((docRef) => {
-        console.log("Comment uploaded with ID:", docRef.id)
-        if(!docRef.id) {
-            console.error("Failed to upload comment: No document ID returned");
-        }else{
-            alert("Comment successfully uploaded with ID:" + docRef.id);    
+        console.log("Comment uploaded with ID:", docRef.id);
+        if (!docRef.id) {
+            throw new Error("No document ID returned");
         }
-        }).catch((error) => {
-            console.error("Error uploading comment:", error)
-        });
+    });
     return result;
 }
 
