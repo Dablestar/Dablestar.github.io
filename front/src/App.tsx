@@ -6,6 +6,7 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import Hobbies from './components/Hobbies'
 import Threads from './components/Threads'
+import Portfolio from './components/Portfolio'
 import "./index.css"
 
 import { useState } from 'react'
@@ -24,6 +25,7 @@ function App() {
           <div className="flex-grow w-full">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/aboutme" element={<AboutMe />} />
               <Route path="/hobbies" element={<Hobbies />} />
               <Route path="/threads" element={<Threads />} />
