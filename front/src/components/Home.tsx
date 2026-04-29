@@ -17,6 +17,9 @@ function Home(){
                   <li className="versionNumber text-2xl font-regular">v1.0.0</li>
                   <li className="versionNumber text-2xl font-regular">v1.0.1</li>
                   <li className="versionNumber text-2xl font-regular">v1.0.2</li>
+                  <li className="versionNumber text-2xl font-regular">v1.0.3</li>
+                  <li className="versionNumber text-2xl font-regular">v1.0.4</li>
+                  <li className="versionNumber text-2xl font-regular">v1.0.5</li>
                </ul>
             </div>
             <div className="updateContents">
@@ -24,6 +27,9 @@ function Home(){
                   <li>Initial Release</li>
                   <li>Added Scroll Restoration</li>
                   <li>Changed Profile Pic & Updated Threads</li>
+                  <li>Connecting Firestore</li>
+                  <li>Fixing Navigation Animation and Scroll Issue</li>
+                  <li>Added Projects Menu</li>
                </ul>
             </div>
             <div className="updateDates">
@@ -31,6 +37,9 @@ function Home(){
                   <li>2025-09-15</li>
                   <li>2025-09-16</li>
                   <li>2026-02-18</li>
+                  <li>2026-03-27</li>
+                  <li>2026-04-22</li>
+                  <li>2026-04-30</li>
                </ul>
             </div>
          </div>
