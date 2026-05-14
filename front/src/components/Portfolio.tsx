@@ -9,6 +9,8 @@ import javaLogo from "../assets/java.png"
 import gcpLogo from "../assets/gcp.png"
 import blazorLogo from "../assets/blazor.png"
 import azureLogo from "../assets/azure.png"
+import chromeLogo from "../assets/chrome.png"
+import firebaseLogo from "../assets/firebase.png"
 import type { JSX } from "react/jsx-dev-runtime"
 
 import project1Img from "../assets/projects/project1.png"
@@ -34,7 +36,9 @@ const logos: { [key: string]: JSX.Element } = {
     typescript: <img src={tsLogo} alt="TypeScript" className="w-10 h-10" />,
     javascript: <img src={jsLogo} alt="JavaScript" className="w-10 h-10" />,
     blazor: <img src={blazorLogo} alt="Blazor" className="w-10 h-10" />,
-    azure: <img src={azureLogo} alt="Azure" className="w-10 h-10" />
+    azure: <img src={azureLogo} alt="Azure" className="w-10 h-10" />,
+    chrome: <img src={chromeLogo} alt="Chrome" className="w-10 h-10" />,
+    firebase: <img src={firebaseLogo} alt="Firebase" className="w-10 h-10" />
 }
 
 
@@ -51,19 +55,19 @@ function Portfolio() {
                     <div>
                         <div>
                             <h2 className="text-2xl font-semibold">Washare</h2>
-                            <h4 className="text-sm font-regular">desc1</h4>
+                            <h4 className="text-sm font-regular">Application Development - Android</h4>
                         </div>
                         
                         <div className="flex flex-row mt-2">
                             <span className="font-regular">Tech Stack:</span>
                             {/* put stack logos here */}
                             <ul className="flex flex-row gap-4 ml-2">
-                                <li>{logos.react}</li>
-                                <li>{logos.nodejs}</li>
-                                <li>{logos.mongodb}</li>
+                                <li>{logos.android}</li>
+                                <li>{logos.gcp}</li>
+                                <li>{logos.firebase}</li>
                             </ul>
                         </div>
-                        <p className="text-lg font-thin">Description of Project 1. This project involved...</p>    
+                        <p className="text-lg font-thin">Washare is a part of team project I involved as a frontend developer, which is a mobile application for sharing carwash pass subscriptions.</p>    
                     </div>
                     
                 </div>
@@ -71,19 +75,19 @@ function Portfolio() {
                     {images.project2}
                     <div>
                         <div>
-                            <h2 className="text-2xl font-semibold">Project 2</h2>
-                            <h4 className="text-sm font-regular">desc2</h4>
+                            <h2 className="text-2xl font-semibold">SongBlocker</h2>
+                            <h4 className="text-sm font-regular">Youtube Shorts Extension</h4>
                         </div>
                         <div className="flex flex-row mt-2">
                             <span className="font-regular">Tech Stack:</span>
                             {/* put stack logos here */}
                             <ul className="flex flex-row gap-4 ml-2">
-                                <li>{logos.react}</li>
-                                <li>{logos.nodejs}</li>
-                                <li>{logos.mongodb}</li>
+                                <li>{logos.javascript}</li>
+                                <li>{logos.chrome}</li>
+                                <li>{logos.figma}</li>
                             </ul>
                         </div>
-                        <p className="text-lg font-thin">Description of Project 1. This project involved...</p>    
+                        <p className="text-lg font-thin">SongBlocker is a chrome extension I made, which designed to block annoying YouTube Shorts.</p>    
                     </div>
                     
                 </div>
@@ -91,44 +95,39 @@ function Portfolio() {
                     {images.project3}
                     <div>
                         <div>
-                            <h2 className="text-2xl font-semibold">Songblocker</h2>
-                            <h4 className="text-sm font-regular">desc3</h4>
+                            <h2 className="text-2xl font-semibold">FridgeManager</h2>
+                            <h4 className="text-sm font-regular">Advanced Software Development</h4>
                         </div>
                         <div className="flex flex-row mt-2">
                             <span className="font-regular">Tech Stack:</span>
                             {/* put stack logos here */}
                             <ul className="flex flex-row gap-4 ml-2">
                                 <li>{logos.react}</li>
-                                <li>{logos.nodejs}</li>
-                                <li>{logos.mongodb}</li>
+                                <li>{logos.gcp}</li>
+                                <li>{logos.azure}</li>
                             </ul>
                         </div>
-                        <p className="text-lg font-thin">Description of Songblocker. This project involved...</p>    
+                        <p className="text-lg font-thin">FridgeManager is a web application designed to help users manage their refrigerator inventory and track expiration dates.</p>    
                     </div>
                     
                 </div>
                 <div className="project-card border p-4 rounded-lg shadow-md flex flex-row gap-4">
                     {images.project4}
                     <div>
-                        <h2 className="text-2xl font-regular">Project 4</h2>
+                        <h2 className="text-2xl font-semibold">Self Introduction</h2>
+                        <h4 className="text-sm font-regular">The Webpage You Looking At Right Now</h4>
                         <div className="flex flex-row mt-2">
                             <span className="font-regular">Tech Stack:</span>
                             {/* put stack logos here */}
                             <ul className="flex flex-row gap-4 ml-2">
                                 <li>{logos.react}</li>
                                 <li>{logos.nodejs}</li>
-                                <li>{logos.mongodb}</li>
+                                <li>{logos.typescript}</li>
                             </ul>
                         </div>
-                        <p className="text-lg font-thin">Description of Project 4. This project involved...</p>    
+                        <p className="text-lg font-thin">This is a simple self-introduction webpage built with React and TypeScript.</p>
                     </div>
-                    
                 </div>
-                
-            </div>
-
-            <span className="title text-2xl font-regular">Design Projects</span>
-            <div className="design grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-5">    
                 
             </div>
         </div>
